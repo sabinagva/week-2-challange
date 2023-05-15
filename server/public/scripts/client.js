@@ -7,6 +7,7 @@ function onReady() {
 
     //event listeners
     $('#addJokeButton').on('click',addJoke);
+    getJokes()
     
 }
 function getJokes() {
@@ -28,7 +29,7 @@ function getJokes() {
 function renderToDom(jokesArray){
     $('#jokeList').empty();
     for (joke of jokesArray)
-    $('#jokeList').append(`<li><b>Joker:</b>${joke.whoseJoke} <b>Joke Question:</b> ${joke.jokeQuestion} <b>Punchline:</b>${joke.punchLine}</li>
+    $('#jokeList').append(`<li><b>Joker:</b>${joke.whoseJoke} <b>Joke Question:</b> ${joke.jokeQuestion} <b> Punchline:</b> ${joke.punchLine}</li>
     `)
 
 }
@@ -59,7 +60,7 @@ function addJoke (event){
         getJokes()
         
     }).catch(function(error){
-        alert('error with cakes post');
+        alert('error with joke post');
         console.log('error with post', error);
     
     }) 
