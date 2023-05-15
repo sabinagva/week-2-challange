@@ -28,7 +28,7 @@ function getJokes() {
 function renderToDom(jokesArray){
     $('#jokeList').empty();
     for (joke of jokesArray)
-    $('#jokeList').append(`<div>Joker:${joke.whoseJoke} Joke Question: ${jokeQuestion} Punchline:${punchLine}</div>
+    $('#jokeList').append(`<li><b>Joker:</b>${joke.whoseJoke} <b>Joke Question:</b> ${joke.jokeQuestion} <b>Punchline:</b>${joke.punchLine}</li>
     `)
 
 }
@@ -36,7 +36,7 @@ function renderToDom(jokesArray){
 function addJoke (event){
     event.preventDefault();
     //add inputs
-    const joker = $('#whoseJokeIn').val();
+    const whoseJoke = $('#whoseJokeIn').val();
     const jokeQuestion = $('#questionIn').val();
     const punchLine = $('#punchlineIn').val();
 
